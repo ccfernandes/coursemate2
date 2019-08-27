@@ -1,0 +1,187 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<!-- {% extends 'main/search.html' %}
+{% block content %}
+<h1>Course Search</h1>
+<p>Don't see a course you are looking for?
+	<a href="addcourse/">Click here to add it!</a>
+</p>
+{{ block.super }}
+{% endblock %} -->
+
+
+
+
+<!-- <style>
+	.leftSide {
+	width:60%;
+	display: inline-block;
+	float: left;
+}
+#topnav input[type=text] {
+  padding: 3px;
+  border: solid;
+  border-width: 1px;
+  font-size: 17px;
+  width:95%;
+  float:left;
+  overflow: auto;
+  display: inline-block;
+}
+#chart {
+	width: 400px;
+	height: 350px;
+}
+#forumHdr {
+	float: left;
+	display: inline-block;
+	overflow: auto;
+}
+#forumText {
+	display: inline-block;
+	float:left;
+}
+#revButton {
+	float:left;
+	padding: 5px;
+	margin-left: 600px;
+}
+.posts {
+	float:left;
+}
+.icons {
+	width: 50px;
+	height: 50px;
+	float:left;
+	display: inline-block;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+.rightSide{
+	float:left;
+}
+#attachments {
+	float:left;
+	width: 500px;
+	height:400px;
+	padding-left: 10px;
+	background-color: #DEEBFF
+}
+#flterRev {
+	float:left;
+	width: 500px;
+	height:400px;
+	margin-top: 10px;
+	padding-left: 10px;
+	background-color: #DEEBFF
+}
+#flterSearch {
+	width:300px;
+}
+</style>
+<body>
+	<h1 id= "hed1">CourseMate</h1>
+	<div class = "leftSide"> 
+		<div id="topnav">
+		<input type="text" placeholder="Search..">
+		</div> 
+		<br> <br>
+		<h2> CS 61A </h2>
+		<h3> Overview: </h3>
+		<img id="chart" src="chart.png" alt="Grade Distributions"> <br> <br>
+		<div id= forumHdr> 
+			<h3 id=forumText> Forum: </h3>
+			<button id="revButton" type="button">Post a Review</button><br>
+		</div> <br> <br>
+		<div class= "posts">
+			<img class="icons" src="girl.png" alt=" User Icon"> 
+			<p> Hi this is a random review that I'm leaving for some placeholder text. This class sucks blah blah blah. </p>
+		</div>
+		<div class= "posts">
+			<img class="icons" src="girl.png" alt=" User Icon"> 
+			<p> Hi this is a random review that I'm leaving for some placeholder text. This class sucks blah blah blah. </p>
+		</div>
+	</div>
+	<div class = "rightSide"> 
+		<div id = "attachments"><p> Attachments: </p></div> 
+		<br>
+		<div id = "flterRev">
+			<p> Filter Reviews: </p>
+			<br>
+			<input id = "flterSearch" type="text" placeholder="Search..">
+		</div>
+	</div>
+	{% for post in posts %} 
+		<h1> {{post.post}} </h1>
+		<p>{{post.date}}</p>
+	{% endfor %}
+
+</body> -->
+<style>
+  .top h1 {
+    font-family: 'Exo 2', sans-serif;
+  }
+  .body {
+    border-radius: 15px 50px;
+    padding: 10px; 
+
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 0.5fr 1fr 0.3fr 
+    /*repeat(auto-fit, minmax(200px, 1fr));*/
+  }
+
+  .filter {
+    background: var(--primary);
+    text-align: center;
+  }
+
+  .bestProf {
+    background: var(--primary);
+    text-align: center;
+  }
+
+  .main {
+    background: var(--primary); 
+    text-align: center;
+  }
+
+  footer {
+    margin-top: 2rem;
+    background: var(--dark);
+    color: var(--light);
+    /*text-align: center;*/
+    padding: 1rem;
+  }
+
+</style>
+
+<div class="top">
+  <h1>Course Page</h1>
+</div>
+
+<div class="body">
+  <div class="filter">
+    <p>This is the filter box</p>
+  </div>
+  <div class="main">
+    <h1>Main body</h1>
+    <div class="statistics">
+      <p>This is the statistics box</p>
+    </div>
+    <div class="reviews">
+      <p> This is where the reviews will be</p>
+      {% for post in posts %} 
+		<h1> {{post.review_title}} </h1>
+		<h5>{{post.review_content}}</h5>
+		<p>{{post.review_published}}</p>
+	  {% endfor %}
+    </div>
+  </div>
+  <div class="bestProf"> 
+    <p>This is the best Prof box</p>
+  </div>
+</div>
+{% endblock %}

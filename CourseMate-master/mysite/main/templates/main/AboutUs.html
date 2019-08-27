@@ -1,0 +1,45 @@
+<!-- AboutUs.html -->
+{% extends 'main/base.html' %}
+
+{% block content %}
+<style>
+	.top h1 {
+		font-family: 'Exo 2', sans-serif;
+	}
+
+	.goal {
+		text-align: center;
+		background: var(--primary);
+		margin-left: 6rem;
+		margin-right: 6rem;
+	}
+
+	.mainInfo {
+		/*align-content: center;*/
+		text-align: center; 
+		background: var(--primary)
+	}
+
+	footer {
+	  margin-top: 2rem;
+	  background: var(--dark);
+	  color: var(--light);
+	  /*text-align: center;*/
+	  padding: 1rem;
+}
+</style>
+<div class="top">
+  <h1>About Us</h1>
+</div>
+<div class="goal">
+	<h2>The Goal:</h2>
+    <p>To provide a platform where peers can come together and give each other advice about different courses offered at a University. There's no need to fret about classes to take when everyone's opinions are in one place! </p>
+</div>
+<div class="mainInfo">
+	<p>(Insert picture here)</p>
+	<h2>The Team</h2> 
+	<p>We are two friends from the Bay Area who want to help fellow peers with the daunting task of picking courses for the semester or quarter. <br> Chelsea Fernandes attends Santa Clara University and is studying Computer Science and Engineering. <br> Sachi Kulkarni attends UC Berkeley where she is studying Computer Science. </p>
+</div>
+{% endblock %}
+
+<!-- footer here -->

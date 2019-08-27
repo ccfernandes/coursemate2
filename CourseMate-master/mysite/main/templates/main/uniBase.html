@@ -1,0 +1,76 @@
+{% extends 'main/search.html' %}
+
+{% block content %}
+<style>
+  .top h1 {
+    font-family: 'Exo 2', sans-serif;
+  }
+  .body {
+    border-radius: 15px 50px;
+    padding: 10px; 
+
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 0.4fr 1fr 0.3fr 
+    /*repeat(auto-fit, minmax(200px, 1fr));*/
+  }
+
+  .filter {
+    background: var(--primary);
+    text-align: center;
+  }
+
+  .topCourses {
+    background: var(--primary);
+    text-align: center;
+  }
+
+  .main {
+    background: var(--primary); 
+    text-align: center;
+  }
+
+  .main li{
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  footer {
+    margin-top: 2rem;
+    background: var(--dark);
+    color: var(--light);
+    /*text-align: center;*/
+    padding: 1rem;
+  }
+
+</style>
+
+<div class="top">
+  <h1>{{ School.abbrev }} Course Search</h1>
+  <p>Don't see a course you are looking for?
+	<a href="addcourse/">Click here to add it!</a>
+</p>
+</div>
+
+<div class="body">
+  <div class="filter">
+    <h3>Filter Search:</h3>
+  </div>
+  <div class="main">
+    <h3>Search Results: </h3>
+
+    {% for instance in result %}
+          <!-- <li class="school">{{ school_list.name }}</li> -->
+      <!-- <h3>{{ instance.courseNumber }}, {{ instance.name }}</h3> -->
+      <!-- <p>{{ instance.name }} ({{ instance.abbrev }})</p> -->
+        <li><a href="/search/{{ instance.abbrev }}">{{ instance.name }} ({{ instance.abbrev }})</a></li>
+        <p></p>
+      <!-- <a href="search/{{ instance.courseNumber }}"><li class="school">{{ instance.name }}</li> -->
+    {% endfor %}
+  </div>
+  <div class="topCourses"> 
+    <h3>Top Courses: </h3>
+  </div>
+</div>
+
+{% endblock %}

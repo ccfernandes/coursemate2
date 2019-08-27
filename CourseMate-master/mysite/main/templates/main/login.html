@@ -1,0 +1,33 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<style>
+  .top h1 {
+    font-family: 'Exo 2', sans-serif;
+  }
+
+  .Userlog {
+    display: grid;
+    background: var(--primary);
+  }
+
+  footer {
+    margin-top: 2rem;
+    background: var(--dark);
+    color: var(--light);
+    /*text-align: center;*/
+    padding: 1rem;
+  }
+
+</style>
+
+<div class="top">
+  <h1>Login</h1>
+</div>
+<div class="Userlog">
+  <h3>UserName: </h3>
+  <h3>Password: </h3>
+  <p>Forgot Username/Password? click here
+  </p>
+</div>
+{% endblock %}
