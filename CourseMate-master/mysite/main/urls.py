@@ -25,16 +25,10 @@ urlpatterns = [
     path('login/', views.login, name="login"),
     path('about/', views.about, name="about"),
     path('review/', views.review, name="review"),
-    path('search/', views.SearchPage, name="search"),
-    path('course/', views.course, name="course"),
-
-    path('search/SCU/', views.college, name="SCU"),
-    path('search/UCSB/', views.college, name="UCSB"),
-    path('search/UCB/', views.college, name="UCB"),
-
-    path('search/UCB/addcourse/', views.addCourse, name="addcourse"),
-    path('search/UCSB/addcourse/', views.addCourse, name="addcourse"),
+    path('search/', views.search, name="search"),
+    path('search/SCU/', views.SCU, name="SCU"),
     path('search/SCU/addcourse/', views.addCourse, name="addcourse"),
+    path('course/', views.course, name="course")
 
     # path('forms/', views.CourseView, name="forms"),
     # path('review_form_submission/', views.review_form_submission, name="review_form_submission"),
