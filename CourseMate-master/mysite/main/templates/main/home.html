@@ -3,7 +3,7 @@
 {% block content %}
 
 <style>
-
+	
 h3 {
   font-family: 'PT Sans Narrow', sans-serif;
 }
@@ -14,12 +14,6 @@ h3 {
   padding: 0.6rem 1.3rem;
   text-decoration: none;
   border: 0;
-}
-
-header input {
-  font-size: 20px;
-  padding-bottom: 10px;
-  padding-top: 5px;
 }
 
 img {
@@ -207,22 +201,26 @@ a {
     <!-- Top Container -->
     <section class="top-container">
       <header class="showcase">
-        <h1>CourseMate</h1>
+        <h1>CourseMate :)</h1>
         <p>Your one-stop shop for course peer reviews!</p>
-        <p>Search for your University to get started: 
+        <p>Select your University from the List below: 
+        <!-- <form action="/action_page.php">
+      <input id="search" type="text" placeholder="Search..." name="search">
+      <button type="submit"><i class="btn">Search</i></button></form> -->
 
+      <!-- <form action="/search">
+        <input type="text" name="textfield">
+
+        <button type="submit">Find your course</button>
+      </form> -->
  
-      <!-- <ul class="schools"> -->
-        <!-- {% for school_list in school_list %} -->
+      <ul class="schools">
+        {% for school_list in school_list %}
           <!-- <li class="school">{{ school_list.name }}</li> -->
-         <!--  <a href="search/{{ school_list.abbrev }}"><li class="school">{{ school_list.name }}</li>
-          </a> -->
-        <!-- {% endfor %} -->
-      <!-- </ul> -->
-      <form action="{% url 'main:search' %}" method="get">
-        <input name="q" type="text" placeholder="Search...">
-         <button class="btn" type="submit" >submit</button>
-      </form>
+          <a href="search/SCU"><li class="school">{{ school_list.name }}</li>
+          </a>
+        {% endfor %}
+      </ul>
     </p>
     
       </header>

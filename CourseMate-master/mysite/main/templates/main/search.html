@@ -9,17 +9,17 @@
   }
   .body {
     border-radius: 15px 50px;
-    padding: 20px; 
+    padding: 10px; 
 
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: /*0.4fr*/ 1fr /*0.3fr */
+    grid-template-columns: 0.4fr 1fr 0.3fr 
     /*repeat(auto-fit, minmax(200px, 1fr));*/
   }
 
   .filter {
     background: var(--primary);
-    text-align: center;
+    text-align: left;
   }
 
   .topCourses {
@@ -30,15 +30,6 @@
   .main {
     background: var(--primary); 
     text-align: center;
-    /*padding-left: 1rem;*/
-    /*padding-right: 1rem;*/
-    padding-top: 10px;
-    padding-bottom: 20px;
-  }
-
-  .main li{
-    text-align: left;
-    padding-left: 30px;
   }
 
   footer {
@@ -52,29 +43,27 @@
 </style>
 
 <div class="top">
-  <h1>School Search</h1>
-  <h3>Select your school below. If not present, please contact xxx@xxx.com to get your school listed!</h3>
+  <!-- <h1>Course Search</h1> -->
 </div>
 
 <div class="body">
-  <!-- <div class="filter">
-    <h3>Filter Search:</h3>
-  </div> -->
+  <div class="filter">
+    <p>This is the filter box</p>
+  </div>
   <div class="main">
-    <h3>Search Results: </h3>
-
-    {% for instance in result %}
+    <p>This is where the course search results will go</p>
+    
+    {% for course_list in course_list %}
           <!-- <li class="school">{{ school_list.name }}</li> -->
-      <!-- <h3>{{ instance.courseNumber }}, {{ instance.name }}</h3> -->
-      <!-- <p>{{ instance.name }} ({{ instance.abbrev }})</p> -->
-        <li><a href="/search/{{ instance.abbrev }}">{{ instance.name }} ({{ instance.abbrev }})</a></li>
-        <p></p>
-      <!-- <a href="search/{{ instance.courseNumber }}"><li class="school">{{ instance.name }}</li> -->
+      <h1>hello</h1>
+      <h3>{{ forms.review_title }}</h3>
+      <p>{{ course_list.review_content }}</p>
+ 
     {% endfor %}
   </div>
-<!--   <div class="topCourses"> 
-    <h3>Top Courses: </h3>
-  </div> -->
+  <div class="topCourses"> 
+    <p>This is the top courses box</p>
+  </div>
 </div>
 
 {% endblock %}

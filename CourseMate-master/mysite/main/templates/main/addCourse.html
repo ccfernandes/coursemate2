@@ -5,19 +5,13 @@
 {% block content %}
 
 <h1>Add a course</h1>
-<form method="POST" action="/search/SCU/addcourse/">
+<form method="POST" action="/search/SCU/">
 	{% csrf_token %}
+	{{ form.errors }}
+	{{ form.non_field_errors }}
 	{{ form.as_p }}
-
-	<!-- <label for="name">Your School: </label>
-    <input id="name" type="text" name="name" value="{{ current_name }}">
-    <input type="submit" value="OK"> -->
-
-
-	<!-- <input name="courseNumber"> -->
-	<!-- {{ form.courseNumber }}
-	{{ form.courseNumber.errors }} -->
-	<!-- <input name="name"> -->
+	<!-- <input name="courseNumber">
+	<input name="name"> -->
 	<!-- we also want to redirect to that course's page -->
 	<input type="submit" value="submit"/>
 </form>
